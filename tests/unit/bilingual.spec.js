@@ -1,11 +1,12 @@
 import { shallowMount } from '@vue/test-utils'
 import VueTestUtils from '@vue/test-utils'
-import chin from './src/chinese.js'
+import trans from '@/translate'
 import Bilingual from '@/components/bilingual.vue'
+import { wrap } from 'module';
 
-const locale = 'zh'
+const locale = "zh"
 
-VueTestUtils.config.mocks["$t"] = (msg) => chin[locale][msg]
+VueTestUtils.config.mocks["$t"] = (msg) => trans[locale][msg]
 
 describe('Bilingual', () => {
     
@@ -20,7 +21,7 @@ describe('Bilingual', () => {
     it('renders successfully', () => {
         const wrapper = shallowMount(Bilingual)
 
-        console.log(wrapper.html())
+        expect(wrapper.text()).toBe("你好啊！世界")
     });
 
 

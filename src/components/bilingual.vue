@@ -6,11 +6,11 @@
 
 <script>
   export default {
-    name: 'Bilingual'
+    name: 'Bilingual',
 
   }
 </script>
 
-<style lang="scss" scoped>
+<style>
 
 </style>
